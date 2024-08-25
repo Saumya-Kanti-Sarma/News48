@@ -1,0 +1,45 @@
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: Oswald, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-family: Edu VIC WA NT Beginner, Roboto, sans-serif;
+}
+
+p,
+div {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+}
+
+.def-btn {
+  background-color: #000000;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.13s ease-in-out;
+  opacity: 0.87;
+  font-family: sans-serif;
+}
+
+.def-btn:hover {
+  opacity: 1;
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
