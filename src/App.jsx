@@ -6,7 +6,7 @@ import P_RegLog from './Routes/Publisher/P_RegLog'
 
 const App = () => {
   const router = createBrowserRouter([
-    // <<<<<<<<<<<<<<<<<<<<All Publishers Routes>>>>>>>>>>>>>>>>>>>>>>>>
+    // <<<<<<<<<<<<<<<<<All Publishers Routes>>>>>>>>>>>>>>>>>>>>>>>>
     {
       path: "/publisher/register",
       element: <P_RegLog />
