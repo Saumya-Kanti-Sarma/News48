@@ -2,11 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { GoogleLogin } from '@react-oauth/google';
 import "./Css/RegLog.Hook.css";
 import toast from 'react-hot-toast';
+import axios from 'axios';
 
 const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOtherParams, emailGoogleHeight, emailGoogleColor, paramHeading, paramSubHeading, paramBGcolor, paramSetPassPlaceHolder, paramBtnColor, paramBtnTxt, paramBtn1, paramBtn2 }) => {
   // function to save input values
   const [data, setData] = useState({
-    date: `${Date()}`,
+    name: null,
+    email: null,
+    phone: null,
+    password: null,
+    gender: null,
+    birthDate: null,
   });
   function handleInputChange(e) {
     const { name, value } = e.target;
@@ -23,9 +29,6 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
     }));
   };
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
   // toggling tickmark and cross mark
   const [tik_name, setTick_name] = useState("");
   const [tik_email, setTick_email] = useState("");
@@ -35,7 +38,7 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
   const [disableBtn2, setDisableBtn2] = useState(true);
   const [btnOpacity2, setBtnOpacity2] = useState(0.5);
   useEffect(() => {
-    console.log(data);
+    //console.log(data);
     if (data.name == null, data.email == null, data.number == null, data.password == null) {
       setTick_name("/circle.svg");
       setTick_email("/circle.svg");
@@ -57,8 +60,8 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
         setTick_email("/cross.svg");
       }
     }
-    if (data.number != null) {
-      if (data.number.length === 10) {
+    if (data.phone != null) {
+      if (data.phone.length === 10) {
         setTick_number("/tick.svg");
       }
       else {
@@ -112,21 +115,39 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
   }, []);
 
   // Registering the user
-  function registerUserData(e) {
+  async function registerUserData(e) {
     e.preventDefault();
-    if (data.name == "" || data.email == "" || data.number == "" || data.password == "") {
+    if (data.name == "" || data.email == "" || data.phone == "" || data.password == "") {
       toast.error("Please fill all the fields");
     }
     else {
-      toast.success("User Registered Successfully");
+      try {
+        const response = await axios.post(`https://reactnews24x7backend.onrender.com/api/key/${import.meta.env.VITE_BACKEND_API_KEY}/publisher/register`, data);
+        console.log(response);
+        if (response.status >= 200 && response.status < 300) {
+          toast.success("User Registered Successfully");
+        }
+      } catch (error) {
+        toast.error("User Registration Failed");
+      }
     }
   }
 
   // Login the user
-  function loginUserData(e) {
+  async function loginUserData(e) {
     e.preventDefault();
-    console.log("btn2");
+    try {
+      const response = await axios.post(`https://reactnews24x7backend.onrender.com/api/key/${import.meta.env.VITE_BACKEND_API_KEY}/publisher/login`, data);
+      console.log(response);
+      if (response.status >= 200 && response.status < 300) {
+        toast.success("Welcome Back");
+      }
+    } catch (error) {
+      toast.error("Login Failed");
+    }
   }
+  //sereanMiles1122Demo
+  //demo1122
 
   return (
     <>
@@ -158,7 +179,7 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
 
               {/* Number */}
               <div className="input-group" style={{ display: paramNumber }}>
-                <input type="number" name="number" placeholder='Enter your Phone Number' id='input' onInput={handleInputChange} />
+                <input type="number" name="phone" placeholder='Enter your Phone Number' id='input' onInput={handleInputChange} />
                 <img src={tik_number} />
               </div>
               {/* Password */}
