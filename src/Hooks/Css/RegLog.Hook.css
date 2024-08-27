@@ -1,75 +1,19 @@
-.reg-area {
-  background: linear-gradient(60deg, rgb(0, 217, 255), rgb(0, 89, 255));
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.flip-card {
-  background-color: transparent;
-  width: 60vw;
-  height: 80vh;
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
+.reglog-hook-main {
   height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.flip-card.flipped .flip-card-inner {
-  transform: rotateY(-180deg);
-}
-
-.register,
-.login {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 12px;
-}
-
-.register,
-.login {
   display: flex;
+  align-items: start;
+  justify-content: space-between;
   flex-direction: column;
-  background-color: aliceblue;
-  box-shadow: 0 0 30px 0 #0000004d;
 }
 
-.login {
-  transform: rotateY(180deg);
-}
-
-@media (max-width: 1280px) {
-  .flip-card {
-    background-color: transparent;
-    width: 60vw;
-    height: 70vh;
-    perspective: 1000px;
-  }
-}
-
-/* CSS for registration form */
 .logo {
   display: flex;
   padding: 5px;
   justify-content: start;
-  align-items: center;
+  align-items: start;
   margin-top: 5px;
-  height: 40px;
+  height: 50px;
+  overflow: hidden;
 }
 
 .logo h1 {
@@ -84,17 +28,13 @@
 .logo h2 {
   font-size: 2.2rem;
   margin-left: 5px;
+  color: #0a14a5;
 }
 
-.login-main {
-  height: calc(100% - 43px);
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-  overflow: hidden;
+.reglog-hook-content {
+  flex: 1;
+  width: 100%;
 }
-
-
 
 .heading-undermain h1,
 .heading-undermain p {
@@ -106,11 +46,13 @@
   color: #000000e1;
   margin: 0;
   margin-left: 10px;
+  background: transparent;
 }
 
 .heading-undermain p {
   font-weight: 500;
 }
+
 
 .regiistration-area {
   display: flex;
@@ -130,7 +72,7 @@
   display: flex;
   flex-direction: column;
   width: calc(100% - 20px);
-  background-color: #0c09b6ad;
+  background-color: #09b634a4;
   height: 50vh;
   border-radius: 12px;
 }
@@ -143,12 +85,13 @@
 }
 
 #input {
-  width: 90%;
+  width: 30%;
   font-size: 1.2rem;
   padding: 14px 20px;
   border: none;
   border-radius: 12px;
   flex: 1;
+  margin: 0 10px;
 }
 
 .email-registration img {
@@ -161,12 +104,12 @@
 .other-param {
   margin-top: 5px;
   display: flex;
+  margin: 0 10px;
 }
 
 .other-param p {
   color: #000;
 }
-
 
 .dob,
 .gender {
@@ -261,23 +204,16 @@
 @media (max-width: 480px) {
   .email-registration {
     width: calc(100% - 40px);
-    padding: 10px;
   }
 
   .input-group {
     display: flex;
     justify-content: center;
-  }
-
-  .input-group {
-    display: flex;
-    justify-content: center;
-    margin-right: 12px;
   }
 
   .email-registration img {
     width: 17px;
-    right: -4%;
+    right: 6%;
     top: 33%;
   }
 
@@ -285,6 +221,34 @@
     padding: 10px 10px;
     font-size: 12px;
     width: 30vw;
+  }
+
+  #input,
+  .other-param {
+    margin: 0 5px;
+  }
+
+  .logo h1 {
+    font-size: 0.8rem;
+  }
+
+  .logo h2 {
+    font-size: 1.8rem;
+  }
+
+  .heading-undermain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .heading-undermain h1 {
+    display: block;
+  }
+
+  .heading-undermain p {
+    font-size: 0.8rem;
   }
 }
 

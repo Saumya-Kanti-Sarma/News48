@@ -1,10 +1,18 @@
 import React from 'react'
-import DefRegLog from '../../Components/login/Def_Login'
+import "./P_RegLog.css"
+import CompReglog from '../../Components/login/CompReglog'
 
 const P_RegLog = () => {
   return (
     <>
-      <DefRegLog />
+      <div className="pub-login-main">
+        <h1>
+          Become A Publisher With Us at <b>News 48</b>
+        </h1>
+        <div className="Pub-log-area">
+          <CompReglog />
+        </div>
+      </div>
     </>
   )
 }
