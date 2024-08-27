@@ -13,6 +13,7 @@
 .flip-card-inner {
   position: relative;
   width: 100%;
+  min-height: 600px;
   height: 100%;
   text-align: center;
   transition: transform 0.8s;
@@ -29,6 +30,7 @@
 .flip-card-back {
   position: absolute;
   width: 100%;
+  min-height: 600px;
   height: 100%;
   border-radius: 22px;
   padding-bottom: 20px;
@@ -41,12 +43,14 @@
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
+  min-height: 600px;
   background-color: #76cf5f;
   color: black;
 }
 
 /* Style the back side */
 .flip-card-back {
+  min-height: 600px;
   background-color: #5fcfcf59;
   color: white;
   transform: rotateY(180deg);

@@ -73,6 +73,7 @@
   flex-direction: column;
   width: calc(100% - 20px);
   background-color: #09b634a4;
+  min-height: 335px;
   height: 50vh;
   border-radius: 12px;
 }
