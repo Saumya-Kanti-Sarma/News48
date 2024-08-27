@@ -146,6 +146,7 @@
   background-color: #0a14a5;
   border-radius: 12px;
   color: aliceblue;
+  cursor: pointer;
 }
 
 .google-registration {

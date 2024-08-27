@@ -3,6 +3,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import "./Css/RegLog.Hook.css";
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import Loader from '../Components/Loader/Loader';
 
 const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOtherParams, emailGoogleHeight, emailGoogleColor, paramHeading, paramSubHeading, paramBGcolor, paramSetPassPlaceHolder, paramBtnColor, paramBtnTxt, paramBtn1, paramBtn2 }) => {
   // function to save input values
@@ -114,9 +115,14 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
     }
   }, []);
 
+  // loader display
+  const [loaderDisplay, setLoaderDisplay] = useState("none");
+  const [loaderDisplay2, setLoaderDisplay2] = useState("none");
+
   // Registering the user
   async function registerUserData(e) {
     e.preventDefault();
+    setLoaderDisplay("block");
     if (data.name == "" || data.email == "" || data.phone == "" || data.password == "") {
       toast.error("Please fill all the fields");
     }
@@ -136,6 +142,7 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
   // Login the user
   async function loginUserData(e) {
     e.preventDefault();
+    setLoaderDisplay2("block");
     try {
       const response = await axios.post(`https://reactnews24x7backend.onrender.com/api/key/${import.meta.env.VITE_BACKEND_API_KEY}/publisher/login`, data);
       console.log(response);
@@ -148,6 +155,7 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
   }
   //sereanMiles1122Demo
   //demo1122
+
 
   return (
     <>
@@ -223,7 +231,9 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
                 disabled={disableBtn1}>
                 Submit
               </button>
-
+              <div className="loader-container">
+                <Loader paramDisplay={loaderDisplay} />
+              </div>
               <button
                 className='submit-btn'
                 style={{
@@ -236,6 +246,9 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
                 disabled={disableBtn2}>
                 Submit
               </button>
+              <div className="loader-container">
+                <Loader paramDisplay={loaderDisplay2} />
+              </div>
             </form>
             <div className='google-registration'>
               <h2>OR</h2>
