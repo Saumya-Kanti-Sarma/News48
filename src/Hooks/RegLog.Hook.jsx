@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { GoogleLogin } from '@react-oauth/google';
 import "./Css/RegLog.Hook.css"
-const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOtherParams, emailGoogleHeight, emailGoogleColor, paramHeading, paramSubHeading, paramBGcolor }) => {
+const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOtherParams, emailGoogleHeight, emailGoogleColor, paramHeading, paramSubHeading, paramBGcolor, paramSetPassPlaceHolder }) => {
   // function to save input values
   const [data, setData] = useState({
     name: null,
@@ -62,12 +62,13 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
   }, [data]);
 
   useEffect(() => {
-    if (paramEmail == null || paramName == null || paramNumber == null || paramPassword == null || paramBGcolor == null) {
+    if (paramEmail == null || paramName == null || paramNumber == null || paramPassword == null || paramBGcolor == null || paramSetPassPlaceHolder == null) {
       paramEmail = "flex";
       paramName = "flex";
       paramNumber = "flex";
       paramPassword = "flex";
       paramBGcolor = "#09b634a4";
+      paramSetPassPlaceHolder = "set your password"
     }
   }, [])
 
@@ -129,7 +130,7 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
               </div>
               {/* Password */}
               <div className="input-group" style={{ display: paramPassword }}>
-                <input type={password} name="number" placeholder='Set your password' id='input' onInput={handleInputChange} />
+                <input type={password} name="number" placeholder={paramSetPassPlaceHolder} id='input' onInput={handleInputChange} />
                 <img src={tik_password} id='password-icon' onClick={handlePasswordChange} />
               </div>
 

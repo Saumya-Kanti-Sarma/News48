@@ -13,7 +13,10 @@ const CompReglog = () => {
         <div className={`flip-card-inner ${flip}`} >
           <div className="flip-card-front">
 
-            <RegLogHook paramHeading={"Register your Account"} paramSubHeading={"Please Provide the following Informations"} />
+            <RegLogHook
+              paramHeading={"Register your Account"}
+              paramSubHeading={"Please Provide the following Informations"}
+              paramSetPassPlaceHolder={"set your password"} />
             <p className='alreadyHave'
               onClick={flipTheCard}>
               Already have an account? Login
@@ -27,6 +30,7 @@ const CompReglog = () => {
               paramEmail={"none"}
               paramOtherParams={"none"}
               paramBGcolor={"#072f9e8c"}
+              paramSetPassPlaceHolder={"enter your password"}
             />
             <p className='alreadyHave'
               onClick={flipTheCard}>
