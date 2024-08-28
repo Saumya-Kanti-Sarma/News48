@@ -50,3 +50,24 @@ input[type="number"]::-webkit-inner-spin-button {
   align-items: center;
   margin-top: 10px;
 }
+
+.overlayer {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0000003a;
+}
+
+.loader-loadig-area {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  border-radius: 12px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
