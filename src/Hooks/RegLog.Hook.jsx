@@ -4,6 +4,7 @@ import "./Css/RegLog.Hook.css";
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import Loader from '../Components/Loader/Loader';
+import Cookies from 'js-cookie';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -150,11 +151,13 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
     setLoaderDisplay2("block");
 
     const response = await axios.post(`https://reactnews24x7backend.onrender.com/api/key/${import.meta.env.VITE_BACKEND_API_KEY}/publisher/login`, data);
-    console.log(response.status);
+
     if (response.status >= 200 && response.status < 300) {
-      toast.success("Welcome Back");
+      toast.success(`${response.data.message}`);
       setLoaderDisplay2("none");
-      navigate("/publisher/")
+      Cookies.set("usrName", response.data.name);
+      Cookies.set("usrID_", response.data.id);
+      // navigate("/publisher/")
     }
     if (response.status >= 300) {
       toast.error(response.status);
