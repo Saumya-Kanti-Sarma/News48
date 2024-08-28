@@ -5,6 +5,8 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 import Loader from '../Components/Loader/Loader';
 
+import { useNavigate } from 'react-router-dom';
+
 const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOtherParams, emailGoogleHeight, emailGoogleColor, paramHeading, paramSubHeading, paramBGcolor, paramSetPassPlaceHolder, paramBtnColor, paramBtnTxt, paramBtn1, paramBtn2 }) => {
   // function to save input values
   const [data, setData] = useState({
@@ -15,6 +17,7 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
     gender: null,
     birthDate: null,
   });
+  const navigate = useNavigate()
   function handleInputChange(e) {
     const { name, value } = e.target;
     setData(prevData => ({
@@ -135,22 +138,27 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
         }
       } catch (error) {
         toast.error("User Registration Failed");
+        console.log(response);
       }
     }
+    setLoaderDisplay("none");
   }
 
   // Login the user
   async function loginUserData(e) {
     e.preventDefault();
     setLoaderDisplay2("block");
-    try {
-      const response = await axios.post(`https://reactnews24x7backend.onrender.com/api/key/${import.meta.env.VITE_BACKEND_API_KEY}/publisher/login`, data);
-      console.log(response);
-      if (response.status >= 200 && response.status < 300) {
-        toast.success("Welcome Back");
-      }
-    } catch (error) {
-      toast.error("Login Failed");
+
+    const response = await axios.post(`https://reactnews24x7backend.onrender.com/api/key/${import.meta.env.VITE_BACKEND_API_KEY}/publisher/login`, data);
+    console.log(response.status);
+    if (response.status >= 200 && response.status < 300) {
+      toast.success("Welcome Back");
+      setLoaderDisplay2("none");
+      navigate("/publisher/")
+    }
+    if (response.status >= 300) {
+      toast.error(response.status);
+      setLoaderDisplay2("none");
     }
   }
   //sereanMiles1122Demo
