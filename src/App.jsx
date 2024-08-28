@@ -3,6 +3,8 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
 import C_home from './Routes/Customer/C_home'
 import C_RegLog from './Routes/Customer/C_RegLog'
 import P_RegLog from './Routes/Publisher/P_RegLog'
+import P_Home from './Routes/Publisher/P_Home'
+import P_AddNews from './Routes/Publisher/P_AddNews'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -17,11 +19,11 @@ const App = () => {
     },
     {
       path: "/publisher",
-      element: "<P_Home />"
+      element: <P_Home />
     },
     {
       path: "/publisher/addnews",
-      element: "<P_AddNews />"
+      element: <P_AddNews />
     },
     {
       path: "/publisher/publishes",
