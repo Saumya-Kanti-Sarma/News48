@@ -127,6 +127,7 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
   async function registerUserData(e) {
     e.preventDefault();
     setLoaderDisplay("block");
+    setBtnOpacity1("0.1");
     if (data.name == "" || data.email == "" || data.phone == "" || data.password == "") {
       toast.error("Please fill all the fields");
     }
@@ -149,20 +150,32 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
   async function loginUserData(e) {
     e.preventDefault();
     setLoaderDisplay2("block");
-
+    setBtnOpacity2("0.7");
     const response = await axios.post(`https://reactnews24x7backend.onrender.com/api/key/${import.meta.env.VITE_BACKEND_API_KEY}/publisher/login`, data);
+    console.log(response);
+    try {
+      if (response.status == 201) {
+        toast.success(`${response.data.message}`);
+        setLoaderDisplay2("block");
+        Cookies.set("usrName", response.data.name);
+        Cookies.set("usrID_", response.data.id);
+        navigate("/publisher/")
+      }
+      setLoaderDisplay2("none");
+      if (response.status == 205) {
+        toast.error(`Please Check the username and password`);
+        setLoaderDisplay2("block");
+        //Cookies.set("usrName", response.data.name);
+        // Cookies.set("usrID_", response.data.id);
+        //navigate("/publisher/")
+      }
+      setLoaderDisplay2("none");
 
-    if (response.status >= 200 && response.status < 300) {
-      toast.success(`${response.data.message}`);
-      setLoaderDisplay2("none");
-      Cookies.set("usrName", response.data.name);
-      Cookies.set("usrID_", response.data.id);
-      // navigate("/publisher/")
+    } catch (error) {
+      console.log("error");
+
     }
-    if (response.status >= 300) {
-      toast.error(response.status);
-      setLoaderDisplay2("none");
-    }
+
   }
   //sereanMiles1122Demo
   //demo1122
