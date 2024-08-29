@@ -81,7 +81,7 @@ const P_mypublishes = () => {
                   <h1>{`Title: ` + article.title}</h1>
                   <p>
                     {article.content.split(" ").slice(0, 20).join(" ") + " ..."}{' '}
-                    <Link to={`/news/${article.id}`}>Read more</Link>
+                    <p onClick={() => { alert("Soon will be added!") }} style={{ color: "blueviolet", fontWeight: "600" }}>Read more</p>
                   </p>
                 </div>
                 <div className="delete-edit">
