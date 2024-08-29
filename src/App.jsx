@@ -5,6 +5,8 @@ import C_RegLog from './Routes/Customer/C_RegLog'
 import P_RegLog from './Routes/Publisher/P_RegLog'
 import P_Home from './Routes/Publisher/P_Home'
 import P_AddNews from './Routes/Publisher/P_AddNews'
+import P_mypublishes from './Routes/Publisher/P_mypublishes'
+import P_profile from './Routes/Publisher/P_profile'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -26,12 +28,12 @@ const App = () => {
       element: <P_AddNews />
     },
     {
-      path: "/publisher/publishes",
-      element: "<P_AllNews />"
+      path: "/publisher/mypublishes",
+      element: <P_mypublishes />
     },
     {
-      path: "/publisher/logout",
-      element: "<P_Logout />"
+      path: "/publisher/profile",
+      element: <P_profile />
     },
     {
       path: "/publisher/feed",

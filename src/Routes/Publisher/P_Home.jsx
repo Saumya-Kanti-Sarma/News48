@@ -14,7 +14,7 @@ const P_Home = () => {
   return (
     <>
       <NavBar />
-      <h1>{Cookies.get("usrName")}</h1>
+      <h1>Welcome {Cookies.get("usrName")}</h1>
     </>
   )
 }

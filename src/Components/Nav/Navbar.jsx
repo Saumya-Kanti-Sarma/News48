@@ -24,10 +24,10 @@ const NavBar = () => {
             <Link to="/publisher/addnews">Add</Link>
           </li>
           <li onClick={closeMenu}>
-            <Link to="/publish">Publish</Link>
+            <Link to="/publisher/mypublishes">Publish</Link>
           </li>
           <li onClick={closeMenu}>
-            <Link to="/profile">Profile</Link>
+            <Link to="/publisher/profile">Profile</Link>
           </li>
         </ul>
       </nav>

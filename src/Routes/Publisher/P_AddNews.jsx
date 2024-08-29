@@ -31,6 +31,7 @@ const P_AddNews = () => {
     setOverlayer("block");
     const response = await axios.post(`https://reactnews24x7backend.onrender.com/api/key/${import.meta.env.VITE_BACKEND_API_KEY}/publisher/publish`, data);
     try {
+      window.location.reload();
       toast.success(response.data.message);
       console.log(response);
       setOverlayer("none");
