@@ -13,6 +13,7 @@ const P_AddNews = () => {
     content: null,
     publisherName: Cookies.get("usrName"),
     image: null,
+    catagory: null,
   });
   function handleInputChange(e) {
     const { name, value } = e.target;
@@ -29,15 +30,21 @@ const P_AddNews = () => {
   async function publishNews(e) {
     e.preventDefault();
     setOverlayer("block");
-    const response = await axios.post(`https://reactnews24x7backend.onrender.com/api/key/${import.meta.env.VITE_BACKEND_API_KEY}/publisher/publish`, data);
-    try {
-      window.location.reload();
-      toast.success(response.data.message);
-      console.log(response);
-      setOverlayer("none");
-    } catch (error) {
-      toast.error("Cannot Published")
-      console.log(error);
+    if (data.title != null && data.content != null) {
+      const response = await axios.post(`https://reactnews24x7backend.onrender.com/api/key/${import.meta.env.VITE_BACKEND_API_KEY}/publisher/publish`, data);
+      try {
+        window.location.reload();
+        toast.success(response.data.message);
+        console.log(response);
+        setOverlayer("none");
+      } catch (error) {
+        toast.error("Cannot Published")
+        console.log(error);
+        setOverlayer("none");
+      }
+    }
+    else {
+      toast.error("All fields are required");
       setOverlayer("none");
     }
   }
@@ -52,6 +59,11 @@ const P_AddNews = () => {
           <div className="form-group">
             <label htmlFor="title">Title of News</label>
             <input type="text" id="title" name="title" placeholder="Enter the title" required onChange={handleInputChange} />
+          </div>
+          {/* Catagory */}
+          <div className="form-group">
+            <label htmlFor="title">Catagogy: Politics, Business, Education etc</label>
+            <input type="text" id="title" name="catagory" placeholder="Enter Catagory" onChange={handleInputChange} />
           </div>
           {/* Content */}
           <div className="form-group">
