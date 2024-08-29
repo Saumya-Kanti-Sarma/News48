@@ -17,7 +17,7 @@ const NavBar = () => {
   return (
     <>
       <nav className="navbar">
-        <h1 className="logo" onClick={navigate("/publisher")}>48 Hours.com</h1>
+        <h1 className="logo" onClick={() => { navigate("/publisher") }}>48 Hours.com</h1>
         <img src="/Menu.svg" alt="Menu" className="menu-icon" onClick={toggleMenu} />
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li onClick={closeMenu}>

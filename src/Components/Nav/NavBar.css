@@ -18,6 +18,10 @@
   cursor: pointer;
 }
 
+.logo:hover {
+  color: rgb(255, 58, 23);
+}
+
 .nav-links {
   list-style: none;
   display: flex;
