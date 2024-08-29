@@ -155,10 +155,11 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
     console.log(response);
     try {
       if (response.status == 201) {
-        toast.success(`${response.data.message}`);
-        setLoaderDisplay2("block");
         Cookies.set("usrName", response.data.name);
         Cookies.set("usrID_", response.data.id);
+        toast.success(`${response.data.message}`);
+        setLoaderDisplay2("block");
+
         navigate("/publisher/")
       }
       setLoaderDisplay2("none");
@@ -199,24 +200,24 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
 
               {/* Name */}
               <div className="input-group" style={{ display: paramName }}>
-                <input type="text" name="name" placeholder='Enter Your Name' id='input' onInput={handleInputChange} />
+                <input type="text" name="name" placeholder='Enter Your Name' className='input' onInput={handleInputChange} />
                 <img src={tik_name} />
               </div>
 
               {/* Email */}
               <div className="input-group" style={{ display: paramEmail }}>
-                <input type="email" name="email" placeholder='Enter your Email ' id='input' onInput={handleInputChange} />
+                <input type="email" name="email" placeholder='Enter your Email ' className='input' onInput={handleInputChange} />
                 <img src={tik_email} />
               </div>
 
               {/* Number */}
               <div className="input-group" style={{ display: paramNumber }}>
-                <input type="number" name="phone" placeholder='Enter your Phone Number' id='input' onInput={handleInputChange} />
+                <input type="number" name="phone" placeholder='Enter your Phone Number' className='input' onInput={handleInputChange} />
                 <img src={tik_number} />
               </div>
               {/* Password */}
               <div className="input-group" style={{ display: paramPassword }}>
-                <input type={password} name="password" placeholder={paramSetPassPlaceHolder} id='input' onInput={handleInputChange} />
+                <input type={password} name="password" placeholder={paramSetPassPlaceHolder} className='input' onInput={handleInputChange} />
                 <img src={tik_password} id='password-icon' onClick={handlePasswordChange} />
               </div>
 

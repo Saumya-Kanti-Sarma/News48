@@ -29,7 +29,7 @@
 .flip-card-front,
 .flip-card-back {
   position: absolute;
-  width: 100%;
+  width: 90%;
   min-height: 600px;
   height: 100%;
   border-radius: 22px;
@@ -76,5 +76,14 @@
   .flip-card {
     width: 90vw;
     height: 85vh;
+  }
+}
+
+@media (max-width: 1080px) {
+
+  /* Position the front and back side */
+  .flip-card-front,
+  .flip-card-back {
+    width: 100%;
   }
 }
