@@ -60,7 +60,7 @@ const App = () => {
     },
     {
       path: "/news/:id",
-      element: <C_NewsDetail />  // Use the new component
+      element: <C_NewsDetail />
     },
   ]);
   return (

@@ -6,8 +6,10 @@
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+  position: fixed;
   height: 60px;
 }
+
 
 .C_logo h1 {
   color: white;
@@ -19,7 +21,12 @@
   cursor: pointer;
 }
 
-.C_logo:hover h1 {
+.logo-btn {
+  background: transparent;
+  border: none;
+}
+
+.logo-btn :hover {
   color: rgb(255, 58, 23);
 }
 

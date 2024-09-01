@@ -14,7 +14,7 @@ const C_Nav = () => {
   return (
     <nav className={`navbar ${menuOpen ? 'menu-open' : ''}`}>
       <div className="C_logo">
-        <h1>48Hours.com</h1>
+        <button className='logo-btn'><h1>48Hours.com</h1></button>
       </div>
       <div className={`links ${menuOpen ? 'active' : ''}`}>
         <NavLink to="/" exact activeClassName="active">Breaking News</NavLink>
