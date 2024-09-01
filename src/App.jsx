@@ -7,6 +7,7 @@ import P_Home from './Routes/Publisher/P_Home'
 import P_AddNews from './Routes/Publisher/P_AddNews'
 import P_mypublishes from './Routes/Publisher/P_mypublishes'
 import P_profile from './Routes/Publisher/P_profile'
+import C_NewsDetail from './Routes/Customer/C_NewsDetail'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -56,6 +57,10 @@ const App = () => {
     {
       path: "/about",
       element: "about page"
+    },
+    {
+      path: "/news/:id",
+      element: <C_NewsDetail />  // Use the new component
     },
   ]);
   return (
