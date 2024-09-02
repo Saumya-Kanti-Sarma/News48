@@ -45,6 +45,7 @@
 .flip-card-front {
   min-height: 600px;
   background-color: #76cf5f;
+  max-height: 1000px;
   color: black;
 }
 
@@ -52,6 +53,7 @@
 .flip-card-back {
   min-height: 600px;
   background-color: #5fcfcf59;
+  max-height: 1000px;
   color: white;
   transform: rotateY(180deg);
 }

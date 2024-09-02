@@ -8,6 +8,8 @@ import P_AddNews from './Routes/Publisher/P_AddNews'
 import P_mypublishes from './Routes/Publisher/P_mypublishes'
 import P_profile from './Routes/Publisher/P_profile'
 import C_NewsDetail from './Routes/Customer/C_NewsDetail'
+import Login from './Routes/Customer/Login'
+import Register from './Routes/Customer/Register'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -43,11 +45,11 @@ const App = () => {
     // <<<<<<<<<<<<<<<<<<<<All Customer Routes>>>>>>>>>>>>>>>>>>>>>>>>
     {
       path: "/login",
-      element: <C_RegLog />
+      element: <Login />
     },
     {
       path: "/register",
-      element: <C_RegLog />
+      element: <Register />
     },
 
     {
