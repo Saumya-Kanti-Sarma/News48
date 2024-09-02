@@ -195,7 +195,7 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
           </div>
           <div className="regiistration-area" style={{ backgroundColor: emailGoogleColor, height: emailGoogleHeight }}>
 
-
+            <br />
             <form className='email-registration' style={{ backgroundColor: paramBGcolor }}>
 
               {/* Name */}
@@ -222,11 +222,6 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
               </div>
 
               <div className="other-param" style={{ display: paramOtherParams }}>
-                {/* DOB */}
-                <div className="dob">
-                  <p>Date Of Birth</p>
-                  <input type="date" name="birthDate" id='dob' onInput={handleInputChange} />
-                </div>
                 {/* Gender */}
                 <div className="gender">
                   <p>Gender</p>
@@ -275,10 +270,6 @@ const RegLogHook = ({ paramName, paramEmail, paramNumber, paramPassword, paramOt
                 <Loader paramDisplay={loaderDisplay2} />
               </div>
             </form>
-            <div className='google-registration'>
-              <h2>OR</h2>
-              <GoogleLogin width={gooogle} />
-            </div>
           </div>
         </div>
       </div>
