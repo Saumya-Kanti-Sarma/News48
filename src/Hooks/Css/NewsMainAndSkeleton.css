@@ -138,12 +138,17 @@
   transform: rotate(180deg);
 }
 
+
+
 .texts-info p button {
   border: none;
   background-color: transparent;
   font-family: roboto;
   color: #015bd1f8;
   cursor: pointer;
+  width: auto;
+  padding: 0;
+  display: inline-block;
 }
 
 @media (max-width: 900px) {

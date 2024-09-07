@@ -18,11 +18,11 @@ const C_Nav = () => {
       </div>
       <div className={`links ${menuOpen ? 'active' : ''}`}>
         <NavLink to="/" exact activeClassName="active">Breaking News</NavLink>
-        <NavLink to="/national" activeClassName="active">Search</NavLink>
+        <NavLink to="/search" activeClassName="active">Search</NavLink>
         <NavLink to="/international" activeClassName="active">International</NavLink>
-        <NavLink to="/blogs" activeClassName="active">Catagory</NavLink>
-        <NavLink to="/about" activeClassName="active">Become Publisher</NavLink>
-        <NavLink to="/profile" activeClassName="active">Register/Login</NavLink>
+        <NavLink to="/catagory" activeClassName="active">Catagory</NavLink>
+        <NavLink to="/publisher/login" activeClassName="active">Become Publisher</NavLink>
+        <NavLink to="/register" activeClassName="active">Register/Login</NavLink>
       </div>
       <div className="menu-icon">
         <img src={menuIMG} alt="menu" onClick={toggleMenu} />
