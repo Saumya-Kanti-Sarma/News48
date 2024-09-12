@@ -1,7 +1,7 @@
-import React from 'react'
-import { Outlet, createBrowserRouter, RouterProvider, BrowserRouter } from 'react-router-dom'
+import React from 'react';
+import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import C_home from './routes/customers/home/C_home.jsx';
-import News from "./routes/customers/news/News.jsx"
+import News from "./routes/customers/news/News.jsx";
 import C_publisher from './routes/customers/punlisher/C_publisher.jsx';
 import C_OriginalNews from './routes/customers/news/components/C_OriginalNews.jsx';
 import About from './routes/customers/about/About.jsx';
