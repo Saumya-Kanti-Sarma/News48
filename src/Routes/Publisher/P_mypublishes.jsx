@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import NavBar from '../../components/Nav/Navbar';
+import NavBar from '../../Components/Nav/Navbar';
 import Cookie from 'js-cookie';
 import { Link } from 'react-router-dom';
 import axios from 'axios';

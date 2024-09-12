@@ -1,16 +1,15 @@
-import React from 'react';
-import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
-import C_home from './Routes/customers/Home/C_home.jsx';
-import News from "./Routes/customers/News/News.jsx";
-import C_OriginalNews from './Routes/customers/News/components/C_OriginalNews.jsx';
-import About from './Routes/customers/About/About.jsx';
-import P_Home from './Routes/Publisher/P_Home.jsx';
-import P_RegLog from "./Routes/Publisher/P_RegLog.jsx";
-import P_AddNews from "./Routes/Publisher/P_AddNews.jsx";
-import P_mypublishes from "./Routes/Publisher/P_mypublishes.jsx";
-import P_profile from "./Routes/Publisher/P_profile.jsx";
+import React from 'react'
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
+import P_RegLog from './Routes/Publisher/P_RegLog'
+import P_Home from './Routes/Publisher/P_Home'
+import P_AddNews from './Routes/Publisher/P_AddNews'
+import P_mypublishes from './Routes/Publisher/P_mypublishes'
+import P_profile from './Routes/Publisher/P_profile';
+import C_Home from "../src/Routes/customer/JSX/C_Home"
+import C_news from "../src/Routes/customer/JSX/C_news"
+import C_about from "../src/Routes/customer/JSX/C_Home"
 const App = () => {
-  const routes = createBrowserRouter([
+  const router = createBrowserRouter([
     // <<<<<<<<<<<<<<<<<All Publishers Routes>>>>>>>>>>>>>>>>>>>>>>>>
     {
       path: "/publisher/register",
@@ -40,26 +39,24 @@ const App = () => {
       path: "/publisher/feed",
       element: "<P_Feed />"
     },
+    // <<<<<<<<<<<<<<<<<<<<All Customer Routes>>>>>>>>>>>>>>>>>>>>>>>>
+
     {
       path: "/",
-      element: <C_home />
-    },
-    {
-      path: "/news",
-      element: <News />
-    },
-    {
-      path: "/news/:id",
-      element: <C_OriginalNews />
+      element: <C_Home />
     },
     {
       path: "/about",
-      element: <About />
+      element: <C_about />
     },
-  ])
+    {
+      path: "/news/",
+      element: <C_news />
+    },
+  ]);
   return (
     <>
-      <RouterProvider router={routes} />
+      <RouterProvider router={router} />
       <Outlet />
     </>
   )

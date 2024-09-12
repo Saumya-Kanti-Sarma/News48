@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import "./Css/P_addnews.css";
-import NavBar from '../../components/Nav/Navbar';
+import NavBar from '../../Components/Nav/Navbar';
 import Cookies from 'js-cookie';
 import axios from 'axios';
-import Loader from '../../components/Loader/Loader';
+import Loader from '../../Components/Loader/Loader';
 import toast from 'react-hot-toast';
 
 const P_AddNews = () => {
