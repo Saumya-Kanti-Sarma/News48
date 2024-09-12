@@ -4,10 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  position: fixed;
   height: 60px;
+  width: 100%;
+  font-family: Roboto;
 }
 
 
@@ -19,15 +18,12 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  font-family: Roboto;
 }
 
 .logo-btn {
   background: transparent;
   border: none;
-}
-
-.logo-btn :hover {
-  color: rgb(255, 58, 23);
 }
 
 .links {
@@ -48,7 +44,8 @@
   display: flex;
   justify-content: center;
   padding: 20px 12px;
-  font-family: serif;
+  font-family: Roboto;
+  font-weight: 300;
 }
 
 .links a:hover {
@@ -106,6 +103,10 @@
 @media (max-width: 480px) {
   .menu-icon {
     display: block;
+  }
+
+  .navbar {
+    width: 96vw;
   }
 
   .links {

@@ -1,22 +1,17 @@
 import React from 'react'
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
-import C_home from './Routes/Customer/C_home'
-import P_RegLog from './Routes/Publisher/P_RegLog'
-import P_Home from './Routes/Publisher/P_Home'
-import P_AddNews from './Routes/Publisher/P_AddNews'
-import P_mypublishes from './Routes/Publisher/P_mypublishes'
-import P_profile from './Routes/Publisher/P_profile'
-import C_NewsDetail from './Routes/Customer/C_NewsDetail'
-import Login from './Routes/Customer/Login'
-import Register from './Routes/Customer/Register'
-import C_Search from './Routes/Customer/C_Search'
-import C_International from './Routes/Customer/C_International'
-import C_Cats from './Routes/Customer/C_Cats'
-import C_IndiviCatagory from './Routes/Customer/C_IndiviCatagory'
-import C_Register from './Routes/Customer/C_Register'
-
+import { Outlet, createBrowserRouter, RouterProvider, BrowserRouter } from 'react-router-dom'
+import C_home from './routes/customers/home/C_home';
+import News from "./routes/customers/news/News"
+import C_publisher from './routes/customers/punlisher/C_publisher';
+import C_OriginalNews from './routes/customers/news/components/C_OriginalNews';
+import About from './routes/customers/about/About';
+import P_Home from './routes/Publisher/P_Home';
+import P_RegLog from "./routes/Publisher/P_RegLog";
+import P_AddNews from "./routes/Publisher/P_AddNews";
+import P_mypublishes from "./routes/Publisher/P_mypublishes";
+import P_profile from "./routes/Publisher/P_profile";
 const App = () => {
-  const router = createBrowserRouter([
+  const routes = createBrowserRouter([
     // <<<<<<<<<<<<<<<<<All Publishers Routes>>>>>>>>>>>>>>>>>>>>>>>>
     {
       path: "/publisher/register",
@@ -46,48 +41,30 @@ const App = () => {
       path: "/publisher/feed",
       element: "<P_Feed />"
     },
-    // <<<<<<<<<<<<<<<<<<<<All Customer Routes>>>>>>>>>>>>>>>>>>>>>>>>
-    {
-      path: "/login",
-      element: <Login />
-    },
-    {
-      path: "/register",
-      element: <C_Register />
-    },
-
     {
       path: "/",
       element: <C_home />
     },
     {
-      path: "/about",
-      element: "about page"
+      path: "/news",
+      element: <News />
     },
     {
       path: "/news/:id",
-      element: <C_NewsDetail />
+      element: <C_OriginalNews />
     },
     {
       path: "/search",
-      element: <C_Search />
+      element: <C_publisher />
     },
     {
-      path: "/international",
-      element: <C_International />
+      path: "/about",
+      element: <About />
     },
-    {
-      path: "/catagories",
-      element: <C_Cats />
-    },
-    {
-      path: "/catagories/:catagory",
-      element: <C_IndiviCatagory />
-    },
-  ]);
+  ])
   return (
     <>
-      <RouterProvider router={router} />
+      <RouterProvider router={routes} />
       <Outlet />
     </>
   )

@@ -1,40 +1,51 @@
+:root {
+  --blue: #1162ae;
+  --red: #b41919;
+  --green: #29d82b;
+  --lightgray: #ececec;
+  --darkgray: #8f8e8e;
+
+}
+
 body,
-ul {
+h1,
+p,
+ul,
+li,
+div {
+  font-family: Lato, Poppins, Opan Sans;
+}
+
+
+body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-  font-family: Oswald, sans-serif;
+.main-home-area {
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-a {
-  text-decoration: none;
-  font-family: Edu VIC WA NT Beginner, Roboto, sans-serif;
+.main-home-area::-webkit-scrollbar {
+  display: none;
 }
 
-p,
-div {
-  font-family: Roboto, sans-serif;
-  margin: 0;
+#nav-area {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
 }
 
-.def-btn {
-  background-color: #000000;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.13s ease-in-out;
-  opacity: 0.87;
-  font-family: sans-serif;
-}
-
-.def-btn:hover {
-  opacity: 1;
+.low-opacity {
+  opacity: 0.4;
+  filter: blur(2px);
+  transition: 0.23s linear;
+  background-color: #000000ce;
 }
 
 

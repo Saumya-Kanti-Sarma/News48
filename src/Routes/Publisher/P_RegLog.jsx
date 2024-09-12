@@ -1,6 +1,6 @@
 import React from 'react'
 import "./P_RegLog.css"
-import CompReglog from '../../Components/login/CompReglog'
+import CompReglog from '../../components/login/CompReglog'
 
 const P_RegLog = () => {
   return (

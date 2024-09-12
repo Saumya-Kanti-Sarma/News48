@@ -14,15 +14,17 @@ const C_Nav = () => {
   return (
     <nav className={`navbar ${menuOpen ? 'menu-open' : ''}`}>
       <div className="C_logo">
-        <button className='logo-btn'><h1>48Hours.com</h1></button>
+        <NavLink className='logo-btn'><h1>48Hours.com</h1></NavLink>
       </div>
       <div className={`links ${menuOpen ? 'active' : ''}`}>
-        <NavLink to="/" exact activeClassName="active">Breaking News</NavLink>
-        <NavLink to="/search" activeClassName="active">Search</NavLink>
-        <NavLink to="/international" activeClassName="active">International</NavLink>
-        <NavLink to="/catagory" activeClassName="active">Catagory</NavLink>
-        <NavLink to="/publisher/login" activeClassName="active">Become Publisher</NavLink>
-        <NavLink to="/register" activeClassName="active">Register/Login</NavLink>
+      </div>
+      <div className={`links ${menuOpen ? 'active' : ''}`}>
+        <NavLink to="/news" exact activeClassName="active">News</NavLink>
+        <NavLink to="/publisher" activeClassName="active">Publisher</NavLink>
+        <NavLink to="/about" activeClassName="active">About</NavLink>
+        <NavLink to="/source" activeClassName="active">Source</NavLink>
+        <NavLink to="/login" exact activeClassName="active">Register/Login</NavLink>
+
       </div>
       <div className="menu-icon">
         <img src={menuIMG} alt="menu" onClick={toggleMenu} />
