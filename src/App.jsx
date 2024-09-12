@@ -1,15 +1,17 @@
 import React from 'react'
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
-import P_RegLog from './Routes/Publisher/P_RegLog'
-import P_Home from './Routes/Publisher/P_Home'
-import P_AddNews from './Routes/Publisher/P_AddNews'
-import P_mypublishes from './Routes/Publisher/P_mypublishes'
-import P_profile from './Routes/Publisher/P_profile';
-import C_Home from "../src/Routes/customer/JSX/C_Home"
-import C_news from "../src/Routes/customer/JSX/C_news"
-import C_about from "../src/Routes/customer/JSX/C_Home"
+import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom'
+import C_home from './Routes/customers/home/C_home';
+import News from "./Routes/customers/news/News"
+import C_publisher from './Routes/customers/punlisher/C_publisher';
+import C_OriginalNews from './Routes/customers/news/components/C_OriginalNews';
+import About from "./Routes/customers/about/About"
+import P_Home from './Routes/Publisher/P_Home';
+import P_RegLog from "./Routes/Publisher/P_RegLog";
+import P_AddNews from "./Routes/Publisher/P_AddNews";
+import P_mypublishes from "./Routes/Publisher/P_mypublishes";
+import P_profile from "./Routes/Publisher/P_profile";
 const App = () => {
-  const router = createBrowserRouter([
+  const routes = createBrowserRouter([
     // <<<<<<<<<<<<<<<<<All Publishers Routes>>>>>>>>>>>>>>>>>>>>>>>>
     {
       path: "/publisher/register",
@@ -39,24 +41,30 @@ const App = () => {
       path: "/publisher/feed",
       element: "<P_Feed />"
     },
-    // <<<<<<<<<<<<<<<<<<<<All Customer Routes>>>>>>>>>>>>>>>>>>>>>>>>
-
     {
       path: "/",
-      element: <C_Home />
+      element: <C_home />
+    },
+    {
+      path: "/news",
+      element: <News />
+    },
+    {
+      path: "/news/:id",
+      element: <C_OriginalNews />
+    },
+    {
+      path: "/search",
+      element: <C_publisher />
     },
     {
       path: "/about",
-      element: <C_about />
+      element: <About />
     },
-    {
-      path: "/news/",
-      element: <C_news />
-    },
-  ]);
+  ])
   return (
     <>
-      <RouterProvider router={router} />
+      <RouterProvider router={routes} />
       <Outlet />
     </>
   )

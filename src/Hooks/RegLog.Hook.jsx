@@ -3,7 +3,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import "./Css/RegLog.Hook.css";
 import toast from 'react-hot-toast';
 import axios from 'axios';
-import Loader from '../Components/Loader/Loader';
+import Loader from '../components/Loader/Loader';
 import Cookies from 'js-cookie';
 
 import { useNavigate } from 'react-router-dom';
