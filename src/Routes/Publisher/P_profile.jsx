@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../../components/Nav/P_Navbar';
+import NavBar from '../../Components/Nav/P_Navbar';
 
 const P_profile = () => {
   return (

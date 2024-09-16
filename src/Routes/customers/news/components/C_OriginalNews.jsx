@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import "./C_OriginalNews.css";
-import Navbar from "../../../../components/navbar/Navbar";
+import Navbar from "../../../../Components/navbar/Navbar";
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import Loader from '../../../../components/Loader/Loader';
+import Loader from '../../../../Components/Loader/Loader';
 
 const C_OriginalNews = () => {
   const { id } = useParams();

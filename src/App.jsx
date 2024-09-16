@@ -1,10 +1,10 @@
 import React from 'react'
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom'
-import C_home from './Routes/customers/home/C_home';
-import News from "./Routes/customers/news/News"
-import C_publisher from './Routes/customers/punlisher/C_publisher';
-import C_OriginalNews from './Routes/customers/news/components/C_OriginalNews';
-import About from "./Routes/customers/about/About"
+import C_home from './Routes/Customers/home/C_home';
+import News from "./Routes/Customers/news/News"
+import C_publisher from './Routes/Customers/Punlisher/C_publisher';
+import C_OriginalNews from './Routes/Customers/news/components/C_OriginalNews';
+import About from "./Routes/Customers/about/About"
 import P_Home from './Routes/Publisher/P_Home';
 import P_RegLog from "./Routes/Publisher/P_RegLog";
 import P_AddNews from "./Routes/Publisher/P_AddNews";

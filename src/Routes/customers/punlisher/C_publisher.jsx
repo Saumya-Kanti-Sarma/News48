@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./C_publisher.css"
-import Navbar from "../../../components/navbar/Navbar"
+import Navbar from '../../../Components/navbar/Navbar'
 import { Link } from 'react-router-dom';
 const C_publisher = () => {
   const [menu, setMenu] = useState(100);

@@ -1,6 +1,6 @@
 //src/routes/customer/home/C_home.jsx
 import React from 'react'
-import Navbar from "../../../components/navbar/Navbar"
+import Navbar from '../../../Components/navbar/Navbar'
 import "./C_home.css"
 import { useNavigate } from 'react-router-dom'
 const C_home = () => {

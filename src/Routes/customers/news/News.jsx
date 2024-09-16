@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./News.css";
-import Navbar from "../../../components/navbar/Navbar"
-import Loader from "../../../components/Loader/Loader";
+import Navbar from "../../../Components/navbar/Navbar"
+import Loader from "../../../Components/Loader/Loader";
 import { useNavigate } from 'react-router-dom';
 
 const News = () => {
