@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from "../../Components/Navbar/Navbar.jsx"
+import Navbar from "../Components/Navbar/Navbar.jsx"
 const C_home = () => {
   return (
     <div>
