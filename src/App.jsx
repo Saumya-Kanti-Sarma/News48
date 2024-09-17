@@ -1,8 +1,8 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"
 import C_home from "./Code/C_home";
 import C_about from "./Code/C_about";
-import C_mainNews from "./Code/C_mainNews";
 import C_news from "./Code/C_news";
+import C_OriginalNews from "./Code/C_mainNews";
 const App = () => {
   const routes = createBrowserRouter([
     // <<<<<<<<<<<<<<<<<All Publishers Routes>>>>>>>>>>>>>>>>>>>>>>>>
@@ -15,8 +15,8 @@ const App = () => {
       element: <C_about />
     },
     {
-      path: "/news:id",
-      element: <C_mainNews />
+      path: "/news/:id",
+      element: <C_OriginalNews />
     },
     {
       path: "/news",
