@@ -83,5 +83,14 @@ input[type="number"]::-webkit-inner-spin-button {
   --green: #29d82b;
   --light-gray: #ececec;
   --dark-gray: #8f8e8e;
+  --white: #fff;
 
+}
+
+#def-btn {
+  padding: 10px 20px;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 6px;
+  border: none;
 }
