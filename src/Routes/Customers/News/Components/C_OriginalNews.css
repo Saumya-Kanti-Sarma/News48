@@ -1,0 +1,132 @@
+:root {
+  --blue: #1162ae;
+  --red: #b41919;
+  --green: #29d82b;
+  --lightgray: #ececec;
+  --darkgray: #8f8e8e;
+
+}
+
+.main-area-of-news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.main-area-of-news h1 {
+  color: var(--red);
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+#news-image-of-main {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  width: 50vw;
+  max-width: 900px;
+  min-width: 310px;
+}
+
+.news-info-area-of-main-news {
+  width: 50vw;
+  max-width: 900px;
+  min-width: 310px;
+  text-align: left;
+  gap: 20px;
+}
+
+.news-info-area-of-main-news p {
+  margin: 0;
+  color: var(--blue);
+}
+
+.heading-of-main-news {
+  font-size: 1.4rem;
+  margin-bottom: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.heading-of-main-news,
+.content-of-main-news {
+  margin-left: 20px;
+  text-align: left;
+}
+
+.content-of-main-news {
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+.browse-other-news {
+  display: flex;
+  padding: 0 20px;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: start;
+}
+
+.other-news-child {
+  border: 1px solid #000;
+  padding: 20px;
+  border-radius: 12px;
+  width: 200px;
+  height: 300px;
+  display: inline-block;
+}
+
+.other-news-img {
+  width: 14vw;
+  height: 16vw;
+  min-width: 200px;
+  min-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.other-news-p {
+  width: 14vw;
+  text-align: center;
+  margin-top: 2px;
+  font-weight: 600;
+  min-width: 200px;
+  cursor: pointer;
+}
+
+.other-news-p:hover {
+  color: var(--red);
+}
+
+#other-news-heading {
+  padding-left: 50px;
+}
+
+@media (max-width:910px) {
+  #news-image-of-main {
+    width: 480px;
+  }
+}
+
+@media (max-width:520px) {
+  #news-image-of-main {
+    width: 50vw;
+  }
+
+  .main-area-of-news {
+    padding: 8px;
+  }
+
+  .content-of-main-news,
+  .title-of-main-news {
+    margin: 10px;
+  }
+
+  #other-news-heading {
+    padding: 0;
+    margin: 10px;
+  }
+}

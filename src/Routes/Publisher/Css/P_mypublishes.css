@@ -1,0 +1,173 @@
+.news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.news-article {
+  background-color: #f9f9f9;
+  display: flex;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-article h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.news-article img {
+  width: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.news-article a {
+  color: #256ecf;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.no-news-message {
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.no-news-message a {
+  color: #256ecf;
+  text-decoration: underline;
+}
+
+.skeleton-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeleton {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  animation: fade 1.5s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+.skeleton-title {
+  width: 70%;
+  height: 30px;
+}
+
+.skeleton-image {
+  width: 100%;
+  height: 200px;
+}
+
+.skeleton-link {
+  width: 50%;
+  height: 20px;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.text-area-allNews {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 12px;
+}
+
+.delete-edit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.delete-edit img {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width:580px) {
+  .news-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .news-article img {
+    width: calc(100vw - 100px);
+    height: calc(100vw - 10%);
+  }
+
+  .delete-edit {
+    margin-top: 10px;
+  }
+
+  .delete-edit img {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+
+  .article-details h1,
+  .article-details p {
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .article-details p {
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width:360px) {
+  .news-article img {
+    width: 280px;
+    height: 144px;
+  }
+
+  .delete-edit {
+    margin-top: 5px;
+  }
+
+  .delete-edit img {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+  }
+
+  .article-details h1,
+  .article-details p {
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .article-details p {
+    font-size: 0.7rem;
+    margin: 0;
+    padding: 0;
+  }
+}
